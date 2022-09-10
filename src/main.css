@@ -1,0 +1,12 @@
+.pokemon-card:hover {
+  transform: scale(1.01);
+  transition: 0.1s;
+}
+
+.pokemon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0.2rem rgb(22, 22, 22));
+}
+
