@@ -10,7 +10,7 @@ export const SearchBar = ({ desactiveToggle }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (searchText.trim().length < 2) return;
+        if (searchText.trim().length < 3) return;
         desactiveToggle();
         navigate(`./search?q=${searchText.trim()}`);
     };

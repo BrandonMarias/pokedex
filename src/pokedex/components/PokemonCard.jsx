@@ -1,31 +1,42 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks";
-import { getPokemonType, parseDataPokemon, ButtoPokemonType, LoadingCard } from "../";
+import {
+    getPokemonType,
+    parseDataPokemon,
+    ButtoPokemonType,
+    LoadingCard,
+} from "../";
 
 export const PokemonCard = ({ pokemon }) => {
-    const { url } = pokemon;
-    const { data, error, loading } = useFetch(url);
+    const { data, error, loading } = useFetch(pokemon.url);
 
     if (error) return <h1>error</h1>;
     if (loading) return <LoadingCard />;
 
     const { name, height, id, sprite, types, weight } = parseDataPokemon(data);
 
-    const style = { borderColor: getPokemonType(types[0].type.name).color, borderWidth: "2px" };
+    const style = {
+        borderColor: getPokemonType(types[0].type.name).color,
+        borderWidth: "2px",
+        backgroundColor: getPokemonType(types[0].type.name).colorHover,
+    };
 
     return (
-        <div className="col animate__animated animate__fadeIn mt-3 pokemon-card">
-            <div className="card border-3" style={style}>
+        <div className="col animate__animated animate__fadeIn pokemon-card">
+            <div className="card m-3 m-md-2" style={style}>
                 <div className="row g-0">
                     <div className="col-md-5">
-                        <img
-                            src={sprite}
-                            className="img-fluid rounded-start pokemon-img"
-                            alt={name}
-                        />
+                        <div className="img-container">
+                            <img
+                                loading="lazy"
+                                src={sprite}
+                                className="img-fluid rounded-start pokemon-img"
+                                alt={name}
+                            />
+                        </div>
                     </div>
                     <div className="col-md-7">
-                        <div className="card-body d-flex flex-column h-100">
+                        <div className="card-body d-flex flex-column h-100 bg-white">
                             <div className="mb-auto ">
                                 <h5 className="card-title">
                                     {name.toLocaleUpperCase()}

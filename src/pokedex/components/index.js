@@ -10,3 +10,5 @@ export * from "./ReturnButton";
 export * from "./PokemonStats";
 export * from "./PokemonInfo";
 export * from "./EvolutionCard";
+export * from "./ArrowEvolution";
+export * from "./PokemonDetails";

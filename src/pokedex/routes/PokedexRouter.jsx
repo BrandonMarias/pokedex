@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { SearchPage } from "../pages/SearchPage";
 import { NavBar } from "../components/NavBar";
 import { PokemosPage, PokemonPage } from "../pages";
 
@@ -14,7 +15,8 @@ export const PokedexRouter = () => {
                     <Route path="type/:typeName" element={<h1>type page</h1>} />
                     <Route path="pokemon/:pokemonId" element={<PokemonPage />} />
                     <Route path="/" element={<PokemosPage />} />
-                    <Route path="Movies" element={<h1>movies</h1>} />
+                    <Route path="moves" element={<h1>movies</h1>} />
+                    <Route path="search" element={<SearchPage/>} />
                     <Route path="*" element={<h1>404</h1>} />
                 </Routes>
             </div>

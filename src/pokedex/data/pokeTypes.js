@@ -107,16 +107,4 @@ export const pokeTypes = [
         color: "#EE99AC",
         colorHover: "#F4BDC9",
     },
-    {
-        name: "unknown",
-        url: "https://pokeapi.co/api/v2/type/10001/",
-        color: "#68A090",
-        colorHover: "#A3C4BC",
-    },
-    {
-        name: "shadow",
-        url: "https://pokeapi.co/api/v2/type/10002/",
-        color: "#493963",
-        colorHover: "#7E6E98",
-    },
 ];

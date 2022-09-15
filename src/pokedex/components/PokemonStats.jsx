@@ -7,7 +7,7 @@ export const PokemonStats = ({ stats }) => {
                     <div className="col-md-4" key={stat.name}>
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">{stat.name}</h5>
+                                <h5 className="card-title capitalize">{stat.name}</h5>
                                 <p className="card-text">{base_stat}</p>
                                 <div className="progress">
                                     <div

@@ -25,7 +25,7 @@ export const ButtoPokemonType = ({ name }) => {
 
     return (
         <button
-            className="btn btn-secondary btn-sm me-2 mt-2"
+            className="btn btn-secondary btn-sm me-2 mt-2 capitalize"
             style={style}
             ref={button}
             onMouseEnter={onMouseEnter}
