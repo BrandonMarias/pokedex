@@ -1,4 +1,5 @@
 import { useFetch } from "../../hooks";
+import { languageCode } from "../settings/lenguage";
 
 export const Ability = ({ ability }) => {
     const { data, error, loading } = useFetch(ability.ability.url);
@@ -12,7 +13,8 @@ export const Ability = ({ ability }) => {
         );
 
     const effect = data.effect_entries?.filter(
-        (entry) => entry.language.name === "en"
+        (entry) =>
+            entry.language.name === languageCode || entry.language.name === "en"
     )[0]?.short_effect;
 
     return (

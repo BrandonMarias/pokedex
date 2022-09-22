@@ -8,10 +8,10 @@ export const usePokemonList = () => {
     const navigate = useNavigate();
     const { offset = "0" } = queryString.parse(location.search);
     const from = Number(offset);
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=${from}&limit=20`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${from}`;
     
     const { data, error, loading, setUrl } = useFetch(url);
-    
+        
     useEffect(() => {
         setUrl(url);
     }, [from])

@@ -4,6 +4,7 @@ export const pokeTypes = [
         url: "https://pokeapi.co/api/v2/type/1/",
         color: "#A8A878",
         colorHover: "#C6C6A7",
+        pokemonModelImg: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
     {
         name: "fighting",

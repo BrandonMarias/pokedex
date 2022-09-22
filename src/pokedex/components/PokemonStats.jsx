@@ -3,11 +3,13 @@ export const PokemonStats = ({ stats }) => {
         <>
             <h3>Stats</h3>
             <div className="row g-3">
-                {stats.map(({ base_stat, effort, stat }) => (
+                {stats.map(({ base_stat, stat }) => (
                     <div className="col-md-4" key={stat.name}>
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title capitalize">{stat.name}</h5>
+                                <h5 className="card-title capitalize">
+                                    {stat.name}
+                                </h5>
                                 <p className="card-text">{base_stat}</p>
                                 <div className="progress">
                                     <div
@@ -28,6 +30,19 @@ export const PokemonStats = ({ stats }) => {
                         </div>
                     </div>
                 ))}
+                <div className="col-md-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title capitalize">total</h5>
+                            <p className="card-text">
+                                {stats.reduce(
+                                    (acc, { base_stat }) => acc + base_stat,
+                                    0
+                                )}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
