@@ -7,8 +7,9 @@ import {
     LoadingCard,
 } from "../";
 
-export const PokemonCard = ({ pokemon }) => {
-    const { data, error, loading } = useFetch(pokemon.url);
+export const PokemonCard = ({ pokemonId, pokemonUrl }) => {
+    const url = pokemonUrl || `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    const { data, error, loading } = useFetch(url);
 
     if (error) return <h1>error</h1>;
     if (loading) return <LoadingCard />;

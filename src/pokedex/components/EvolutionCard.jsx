@@ -22,7 +22,7 @@ export const EvolutionCard = React.memo(({ url }) => {
                 <ArrowEvolution />
                 {evolutionsToPrint.map((pokemon) => (
                     <div className="col-sm-6 col-md-4 col-lg-3" key={nanoid()}>
-                        <PokemonCard pokemon={pokemon} />
+                        <PokemonCard pokemonUrl={pokemon.url} />
                     </div>
                 ))}
             </>
@@ -35,7 +35,7 @@ export const EvolutionCard = React.memo(({ url }) => {
                 <p className="alert alert-warning">This pokemon has no evolutions</p>
             )}
             <div className="col-md-3">
-                <PokemonCard pokemon={firstEvolution[0]} />
+                <PokemonCard pokemonUrl={firstEvolution[0].url} />
             </div>
             {printEvolutions(secondEvolution)}
             {printEvolutions(thirdEvolution)}
