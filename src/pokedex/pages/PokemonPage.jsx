@@ -5,7 +5,9 @@ import {
     PokemonDetails,
     LoadingCard,
     usePokemonPage,
+    ReturnButton
 } from "../";
+import { AddFavoritePokemon } from "../components/AddFavoritePokemon";
 
 export const PokemonPage = () => {
     const { data, error, loading, pokemonIdNumber, next, previous } =
@@ -29,7 +31,10 @@ export const PokemonPage = () => {
     return (
         <>
             <br />
-            {buttonsPagination}
+            <div className="d-flex justify-content-between align-items-center mx-3">
+                <ReturnButton />
+                <AddFavoritePokemon pokemonName={name}/>
+            </div>
             <div className="row mt-5">
                 <div className="col-xl-3 mb-4">
                     <img

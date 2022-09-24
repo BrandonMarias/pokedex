@@ -6,12 +6,13 @@ import {
     ButtoPokemonType,
     LoadingCard,
 } from "../";
+import { AddFavoritePokemon } from "./AddFavoritePokemon";
 
-export const PokemonCard = ({ pokemonId, pokemonUrl }) => {
+export const PokemonCard = ({ pokemonId, pokemonUrl}) => {
     const url = pokemonUrl || `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
     const { data, error, loading } = useFetch(url);
 
-    if (error) return <h1>error</h1>;
+    if (error) return <h4>Pokemon not found</h4>;
     if (loading) return <LoadingCard />;
 
     const { name, height, id, sprite, types, weight } = parseDataPokemon(data);
@@ -55,13 +56,14 @@ export const PokemonCard = ({ pokemonId, pokemonUrl }) => {
                                     />
                                 ))}
                             </div>
-                            <div className="mt-2">
+                            <div className="mt-5 d-flex justify-content-between align-items-center">
                                 <Link
                                     className="btn btn-outline-primary"
                                     to={`/pokemon/${id}`}
                                 >
                                     More...
                                 </Link>
+                                <AddFavoritePokemon pokemonName={name} />
                             </div>
                         </div>
                     </div>

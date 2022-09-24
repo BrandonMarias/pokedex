@@ -9,14 +9,14 @@ export const ButtonsPagination = ({
     return (
         <div className="d-flex justify-content-between">
             <button
-                className="btn btn-outline-danger"
+                className="btn btn-sm btn-outline-danger"
                 onClick={onPrevious}
                 disabled={previousActive}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
+                    width="30"
+                    height="30"
                     fill="currentColor"
                     className="bi bi-arrow-left-circle-fill me-2"
                     viewBox="0 0 16 16"
@@ -26,7 +26,7 @@ export const ButtonsPagination = ({
                 Previous
             </button>
             <button
-                className="btn btn-outline-danger"
+                className="btn btn-sm btn-outline-danger"
                 onClick={onNext}
                 disabled={nextActive}
             >

@@ -37,7 +37,7 @@ export const SearchPage = () => {
 
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-0 my-4">
                 {pokemons.map((pokemon) => (
-                    <PokemonCard key={nanoid()} pokemon={pokemon} />
+                    <PokemonCard key={nanoid()} pokemonUrl={pokemon.url} />
                 ))}
             </div>
         </>

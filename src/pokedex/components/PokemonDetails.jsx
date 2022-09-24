@@ -2,7 +2,6 @@ import { nanoid } from "nanoid";
 import { Ability } from "./Ability";
 import { ButtoPokemonType } from "./ButtoPokemonType";
 import { PokemonStats } from "./PokemonStats";
-import { ReturnButton } from "./ReturnButton";
 
 export const PokemonDetails = ({
     name,
@@ -44,11 +43,8 @@ export const PokemonDetails = ({
                         <Ability ability={ability} key={nanoid()} />
                     ))}
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item mt-2">
                     <PokemonStats stats={stats} />
-                </li>
-                <li className="list-group-item">
-                    <ReturnButton />
                 </li>
             </ul>
         </div>

@@ -29,6 +29,9 @@ export const NavBar = () => {
                         <NavLink className={activeLink} to="pokemons">
                             Pokemons
                         </NavLink>
+                        <NavLink className={activeLink} to="favorites">
+                            Favorites
+                        </NavLink>
                         <NavLink className={activeLink} to="types">
                             Types
                         </NavLink>

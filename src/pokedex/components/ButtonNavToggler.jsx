@@ -1,6 +1,5 @@
-
-import PropTypes from "prop-types"
-export const ButtonNavToggler = ({refButtonToggler}) => {
+import PropTypes from "prop-types";
+export const ButtonNavToggler = ({ refButtonToggler }) => {
     return (
         <button
             className="navbar-toggler "
@@ -18,6 +17,5 @@ export const ButtonNavToggler = ({refButtonToggler}) => {
 };
 
 ButtonNavToggler.propTypes = {
-    refButtonToggler: PropTypes.object.isRequired
-}
-
+    refButtonToggler: PropTypes.object.isRequired,
+};
