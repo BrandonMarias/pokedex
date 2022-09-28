@@ -21,7 +21,7 @@ export const useFetch = (urlArg) => {
     };
 
     useEffect(() => {
-        fetchData()
+        fetchData();
     }, [url]);
 
     return { ...state, setUrl };

@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { PokedexRouter } from "./pokedex/routes/PokedexRouter";
+import { PokedexRouter } from "./routes/PokedexRouter";
 
 export const PokedexApp = () => {
     return (
