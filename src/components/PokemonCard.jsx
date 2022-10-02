@@ -20,21 +20,23 @@ export const PokemonCard = React.memo(({ pokemonId, pokemonUrl }) => {
 
     return (
         <div className="col animate__animated animate__fadeIn pokemon-card">
-            <div className="card m-3 m-md-2" style={style}>
+            <div className="card" style={style}>
                 <div className="row g-0">
                     <div className="col-md-5">
                         <div className="img-container">
-                            <img
-                                loading="lazy"
-                                src={sprite}
-                                className="img-fluid rounded-start pokemon-img pokemon-jump"
-                                alt={name}
-                            />
+                            <Link to={`/pokemons/${id}`}>
+                                <img
+                                    loading="lazy"
+                                    src={sprite}
+                                    className="img-fluid rounded-start pokemon-img animation-up-down"
+                                    alt={name}
+                                />
+                            </Link>
                         </div>
                     </div>
-                    <div className="col-md-7">
-                        <div className="card-body d-flex flex-column h-100 bg-white">
-                            <div className="mb-auto ">
+                    <div className="col-md-7 h-100">
+                        <div className="card-body d-flex flex-column h-100 bg-light">
+                            <div className="mb-auto">
                                 <h5 className="card-title">
                                     {name.toLocaleUpperCase()}
                                 </h5>
@@ -54,7 +56,7 @@ export const PokemonCard = React.memo(({ pokemonId, pokemonUrl }) => {
                             <div className="mt-5 d-flex justify-content-between align-items-center">
                                 <Link
                                     className="btn btn-outline-primary"
-                                    to={`/pokemon/${id}`}
+                                    to={`/pokemons/${id}`}
                                 >
                                     More...
                                 </Link>

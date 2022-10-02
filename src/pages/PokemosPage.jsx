@@ -1,13 +1,11 @@
-import { PokemonList } from "../"
-
+import { PokemonList } from "../";
 
 export const PokemosPage = () => {
-  return (
-    <>
-        <div className="row mt-4">
-            <PokemonList/>
+    return (
+        <div className="container my-3">
+            <PokemonList />
+
+            <br />
         </div>
-    <br />
-    </>
-  )
-}
+    );
+};

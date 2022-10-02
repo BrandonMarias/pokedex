@@ -10,12 +10,14 @@ export const FavoritePage = () => {
             {favoritePokemons.length === 0 && (
                 <h2>There are no favorite pokemons</h2>
             )}
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-0 my-4">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 align-items-stretch my-4">
                 {favoritePokemons.map((pokemonName) => (
-                    <PokemonCard
-                        key={nanoid()}
-                        pokemonUrl={`https://pokeapi.co/api/v2/pokemon/${pokemonName}`}
-                    />
+                    <div className="col">
+                        <PokemonCard
+                            key={nanoid()}
+                            pokemonUrl={`https://pokeapi.co/api/v2/pokemon/${pokemonName}`}
+                        />
+                    </div>
                 ))}
             </div>
         </>

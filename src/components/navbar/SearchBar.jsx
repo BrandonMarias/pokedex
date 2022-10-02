@@ -13,25 +13,26 @@ export const SearchBar = ({ desactiveToggle }) => {
         if (searchText.trim().length < 2) return;
         desactiveToggle();
         navigate(`./search?q=${searchText.trim()}`);
-    };
+        };
     const onIputClick = () => inputSearch.current.select();
 
     return (
-        <form className="d-flex" onSubmit={handleSubmit}>
+        <form className="d-gird d-md-flex" onSubmit={handleSubmit}>
             <input
                 ref={inputSearch}
-                className="form-control me-2"
+                className="form-control me-2 mb-2 mb-md-0 mt-2 mt-md-0"
                 type="search"
                 placeholder="Search"
+                autoComplete="off"
                 aria-label="Search"
                 name="searchText"
                 value={searchText}
                 onChange={handleChange}
                 onClick={onIputClick}
-                list="searchPokemons"
+                list={searchText.trim().length > 0 ? "searchPokemons" : ""}
             />
 
-            <button className="btn btn-warning me-2" type="submit">
+            <button className="btn btn-warning w-100" type="submit">
                 Search
             </button>
 

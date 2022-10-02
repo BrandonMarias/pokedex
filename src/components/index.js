@@ -6,3 +6,6 @@ export * from "./PokemonCard";
 export * from "./PokemonList";
 export * from "./navbar";
 export * from "./pokemonPage";
+export * from "./TypeCard";
+export * from "./DamageRelations";
+export * from "./DamageRelationsCard";

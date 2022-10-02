@@ -41,6 +41,10 @@
     text-transform: capitalize;
 }
 
+.pointer-cursor {
+    cursor: pointer;
+}
+
 .my-tooltip:hover::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -121,3 +125,19 @@
     width: calc(2rem + 0.75rem);
     border-radius: 3rem;
 }
+
+@keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  
+  .animation-up-down {
+    animation: updown 1s ease infinite;
+  }
