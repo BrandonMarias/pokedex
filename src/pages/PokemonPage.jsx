@@ -4,25 +4,12 @@ import { AddFavoritePokemon, ReturnButton, PokemonInfo } from "../";
 import { usePokemonPage, parseDataPokemon, PokemonImg } from "../";
 
 export const PokemonPage = React.memo(() => {
-    const { data, error, loading, pokemonIdNumber, next, previous } =
-        usePokemonPage();
+    const { data, error, loading, pokemonIdNumber, next, previous } = usePokemonPage();
 
     if (error) return <h1>No pokemon found</h1>;
     if (loading) return <LoadingCard />;
 
-    const {
-        name,
-        height,
-        id,
-        types,
-        weight,
-        abilities,
-        stats,
-        shinySprite,
-        sprite,
-        pokemonSpeciesUrl,
-    } = parseDataPokemon(data);
-
+    const dataPokemon = parseDataPokemon(data);
     const isVariety = pokemonIdNumber >= 10000;
 
     const buttonsPagination = !isVariety && (
@@ -39,21 +26,14 @@ export const PokemonPage = React.memo(() => {
             <br />
             <div className="d-flex justify-content-between align-items-center mx-3">
                 <ReturnButton />
-                <AddFavoritePokemon pokemonId={id} />
+                <AddFavoritePokemon pokemonId={dataPokemon.id} />
             </div>
             <div className="row mt-5">
-                <PokemonImg
-                    shinySprite={shinySprite}
-                    sprite={sprite}
-                    name={name}
-                />
-
-                <PokemonDetails
-                    {...{ name, height, weight, types, abilities, stats, id }}
-                />
+                <PokemonImg {...dataPokemon} />
+                <PokemonDetails {...dataPokemon} />
             </div>
             <br />
-            <PokemonInfo pokemonSpeciesUrl={pokemonSpeciesUrl} />
+            <PokemonInfo pokemonSpeciesUrl={dataPokemon.pokemonSpeciesUrl} />
             <br />
             {buttonsPagination}
             <br />

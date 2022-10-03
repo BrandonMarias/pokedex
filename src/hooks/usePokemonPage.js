@@ -16,11 +16,11 @@ export const usePokemonPage = () => {
     const pokemonIdNumber = Number(pokemonId);
 
     const next = () => {
-        navigate(`/pokemon/${pokemonIdNumber + 1}`, { replace: true });
+        navigate(`/pokemons/${pokemonIdNumber + 1}`, { replace: true });
     };
 
     const previous = () => {
-        navigate(`/pokemon/${pokemonIdNumber - 1}`, { replace: true });
+        navigate(`/pokemons/${pokemonIdNumber - 1}`, { replace: true });
     };
 
     return { data, error, loading, pokemonIdNumber, navigate, next, previous };
