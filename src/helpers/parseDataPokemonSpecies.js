@@ -10,7 +10,7 @@ export const parseDataPokemonSpecies = (data) => {
     const urlEvolutions = evolution_chain?.url ?? "";
 
     return {
-        biography,
+        biography: biography ?? "",
         urlEvolutions,
         isBaby: data?.is_baby ?? false,
         isLegendary: data?.is_legendary ?? false,

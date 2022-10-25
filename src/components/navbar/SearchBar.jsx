@@ -10,9 +10,14 @@ export const SearchBar = ({ desactiveToggle }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (searchText.trim().length < 2) return;
+        const seacrh = searchText.trim().toLowerCase();
+        const pokemonId = Number(seacrh);
+        if (pokemonId) {
+            return navigate(`/pokemons/${pokemonId}`);
+        }
+        if (seacrh.length < 2) return;
         desactiveToggle();
-        navigate(`./search?q=${searchText.trim()}`);
+        navigate(`./search?q=${seacrh}`);
         };
     const onIputClick = () => inputSearch.current.select();
 
