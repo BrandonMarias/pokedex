@@ -14,7 +14,7 @@ export const PokemonPage = React.memo(() => {
 
     const buttonsPagination = !isVariety && (
         <ButtonsPagination
-            nextActive={pokemonIdNumber >= 905}
+            nextActive={pokemonIdNumber >= 1010}
             previousActive={pokemonIdNumber <= 1}
             onPrevious={() => previous()}
             onNext={() => next()}
