@@ -1,7 +1,8 @@
 import { useFetch } from "../../hooks";
+import { pokemonCount } from "../../settings/pokemonCount";
 
 export const DataListPokemons = () => {
-    const { data,error,loading} = useFetch("https://pokeapi.co/api/v2/pokemon?limit=898");
+    const { data,error,loading} = useFetch("https://pokeapi.co/api/v2/pokemon?limit="+ pokemonCount);
 
     if(loading || error) return null;
 

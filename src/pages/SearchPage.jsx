@@ -2,8 +2,9 @@ import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import { nanoid } from "nanoid";
 import { LoadingCard, PokemonCard, getPokemonsByName, useFetch } from "../";
+import { pokemonCount } from "../settings/pokemonCount";
 
-const url = "https://pokeapi.co/api/v2/pokemon?limit=898&offset=0";
+const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit="+ pokemonCount;
 export const SearchPage = () => {
     const location = useLocation();
     const { q = "" } = queryString.parse(location.search);

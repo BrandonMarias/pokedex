@@ -1,5 +1,7 @@
+import { pokemonCount } from "../settings/pokemonCount";
+
 export const getPokemonsId = (offset = 0, limit = 20) => {
-    const pokemonsCount = 898;
+    const pokemonsCount = pokemonCount;
     const pokemons = [];
     const next = offset + limit < pokemonsCount;
     const previous = offset - limit >= 0;
